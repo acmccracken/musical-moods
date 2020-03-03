@@ -8,6 +8,8 @@ const passport = require('passport');
 
 // load the env vars
 require('dotenv').config();
+require('./config/database');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add a Song!</h2>
+    <form action="/moods" method="POST">
+		
+		<label>Song Name:
+			<input type="text" name="songName">
+        </label><br>
+        <label>Artist Name:
+			<input type="text" name="artistName">
+		</label><br>
+		<label>Mood/Genre:
+			<select name="mood">
+				<option value="Peaceful">Peaceful</option>
+				<option value="Hype">Hype</option>
+				<option value="Transcendental">Transcendental</option>
+				<option value="Relaxed">Relaxed</option>
+                <option value="Happy">Happy</option>
+			</select>
+		</label><br>
+        <label> Release Year:
+            <input type="text" name="year">
+        </label></br>
+        <button type="submit">This is a button and I do button things...and lie</button>
+        
+		
+	</form>
+</body>
+</html>
