@@ -1,2 +1,14 @@
 <%- include('../partials/header') %>
 <h1>Songs Page</h1>
+<table>
+<tbody>
+    <% songs.forEach(function(s) { %>
+      <tr>
+        <td><%= s.songName %></td>
+        <td><%= s.artistName %></td>
+        <td><%= s.mood %></td>
+        <td><%= s.year %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>

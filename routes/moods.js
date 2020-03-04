@@ -4,8 +4,5 @@ const moodsCtrl = require("../controllers/moods");
 
 
 router.get("/", moodsCtrl.index);
-router.get('/new', moodsCtrl.new);
-
-router.post('/', moodsCtrl.create);
 
 module.exports = router;
