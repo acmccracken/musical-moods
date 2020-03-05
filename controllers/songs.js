@@ -34,6 +34,7 @@ function create(req, res) {
 
 function show(req, res) {
     Song.findById(req.params.id, function(err, song){
+        console.log(song)
         res.render('songs/show', {song});
     }
     )};
@@ -46,7 +47,9 @@ function show(req, res) {
         )};
 
         function update(req, res) {
-            Song.findByIdAndUpdate(req.params.id, req.body);
+            Song.findByIdAndUpdate(req.params.id, req.body, function(err, song) {
+
+                res.redirect('/songs');
+            });
             console.log(req.params.id);
-            res.redirect('/songs');
         }

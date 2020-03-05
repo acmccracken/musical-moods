@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Show</title>
-</head>
+<%- include('../partials/header') %>
+
 <body>
     <table>
         <tr>
@@ -26,7 +20,7 @@
             </form>
         </td>
             <td>
-                <form action="/songs/<%= song._id %>?_method=UPDATE" method="POST">
+                <form action="/songs/<%= song._id %>?_method=PUT" method="POST">
                 <label>Change Mood:
                     <select name="mood">
                         <option value="Peaceful">Peaceful</option>
@@ -42,8 +36,9 @@
             </td>
 
         </tr>
+        <tr></tr>
             <td>
-                <form action="/songs/<%= song._id %>?_method=UPDATE" method="POST">
+                <form action="/songs/<%= song._id %>?_method=PUT" method="POST">
                     <label>Rate Song:
                         <select name="rating.songRating">
                             <option value=1>1</option>
@@ -54,13 +49,15 @@
                         </select>
                         <button type="submit" id="updatebtn2">Rate Song</button>
             </td>
-            
-                <% if (song.rating == true) {%>
-                    <td><%= song.mood %></td>
-                }
+        
+                <% if (song.rating.length != 0) {%>
+                    <td>Song Rating: </td>
+                    <td><% song.rating.forEach(function(r){ %>
+                        <%= r.songRating %></td>
+                    <%})%>
                 <%}%>
             
-        <tr>
+        
 
         </tr>
         </table>
