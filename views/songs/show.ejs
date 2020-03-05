@@ -20,6 +20,12 @@
 
             <td>Year:</td>
             <td><%= song.year %></td>
+            <td>
+            <form action="/songs/<%= song._id %>?_method=DELETE" method="POST">
+                <button type="submit" id="deletebtn">X</button>
+                
+            </form>
+            </td>
         </tr>
         </table>
     
