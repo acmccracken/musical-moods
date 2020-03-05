@@ -8,9 +8,9 @@ router.get("/", songsCtrl.index);
 router.get('/new', songsCtrl.new);
 router.get('/:id', songsCtrl.show);
 
-
 router.post('/', songsCtrl.create);
-router.delete('/songs/:id', songsCtrl.delete);
+router.delete('/:id', songsCtrl.delete);
+router.put('/:id', songsCtrl.update);
 
 
 module.exports = router;

@@ -2,6 +2,12 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+const ratingSchema = new Schema({
+    songRating: {
+        type: Number,
+        enum: [1, 2, 3, 4, 5]
+    }
+});
 const songSchema = new Schema({
     songName: {
         type: String,
@@ -22,9 +28,10 @@ const songSchema = new Schema({
         min: 0,
         max: 2020,
         required: true
-    }
+    },
+    rating: [ratingSchema]
 
-  
   });
+ 
 
   module.exports = mongoose.model('Mood', songSchema);

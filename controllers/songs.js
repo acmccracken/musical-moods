@@ -7,6 +7,7 @@ module.exports = {
     create,
     show,
     delete: deleteOne,
+    update,
   };
 
   function index(req, res) {
@@ -39,7 +40,13 @@ function show(req, res) {
 
     function deleteOne(req, res) {
         Song.findByIdAndDelete(req.params.id, function(err, song){
+         console.log(song);
         res.redirect('/songs');
-        console.log(song);
         }
         )};
+
+        function update(req, res) {
+            Song.findByIdAndUpdate(req.params.id, req.body);
+            console.log(req.params.id);
+            res.redirect('/songs');
+        }

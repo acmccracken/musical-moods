@@ -23,9 +23,45 @@
             <td>
             <form action="/songs/<%= song._id %>?_method=DELETE" method="POST">
                 <button type="submit" id="deletebtn">X</button>
-                
             </form>
+        </td>
+            <td>
+                <form action="/songs/<%= song._id %>?_method=UPDATE" method="POST">
+                <label>Change Mood:
+                    <select name="mood">
+                        <option value="Peaceful">Peaceful</option>
+                        <option value="Hype">Hype</option>
+                        <option value="Transcendental">Transcendental</option>
+                        <option value="Relaxed">Relaxed</option>
+                        <option value="Happy">Happy</option>
+                    </select>
+                    <button type="submit" id="updatebtn">CHANGE</button>
+
+                </label>
+                </form>
             </td>
+
+        </tr>
+            <td>
+                <form action="/songs/<%= song._id %>?_method=UPDATE" method="POST">
+                    <label>Rate Song:
+                        <select name="rating.songRating">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
+                        <button type="submit" id="updatebtn2">Rate Song</button>
+            </td>
+            
+                <% if (song.rating == true) {%>
+                    <td><%= song.mood %></td>
+                }
+                <%}%>
+            
+        <tr>
+
         </tr>
         </table>
     
