@@ -1,12 +1,16 @@
 <%- include('../partials/header') %>
-<h1>Songs Page</h1>
+<h1>Song List</h1>
 <table>
 <tbody>
     <% songs.forEach(function(s) { %>
       <tr>
+          <td>Song Name: </td>
         <td><%= s.songName %></td>
+        <td>Artist: </td>
         <td><%= s.artistName %></td>
+        <td>Mood: </td>
         <td><%= s.mood %></td>
+        <td>Release Year: </td>
         <td><%= s.year %></td>
         <td><a href="/songs/<%= s._id %>">DETAILS</a></td>
 
