@@ -3,6 +3,6 @@ const router = express.Router();
 const ratingsCtrl = require("../controllers/ratings");
 
 
-router.post('/', ratingsCtrl.create);
+router.post('/songs/:id/ratings', ratingsCtrl.create);
 
 module.exports = router;

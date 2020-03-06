@@ -1,4 +1,5 @@
 const Song = require('../models/song');
+const User = require('../models/user');
 
 
 module.exports = {
@@ -12,16 +13,22 @@ module.exports = {
 
   function index(req, res) {
     Song.find({}, function(err, songs) {
-        res.render('songs/index', { songs });
+        res.render('songs/index', { 
+            songs,
+            user: req.user, 
+        });
       });
 }
 
  function newSong(req, res) {
-    res.render('songs/new');
+    res.render('songs/new'),{
+        user: req.user,
+    };
 }
 
 function create(req, res) {
     const song = new Song(req.body);
+    song.userCreated = req.user_id;
     song.save((err) => {
     if(err){
         console.log(err);
@@ -33,8 +40,10 @@ function create(req, res) {
 
 function show(req, res) {
     Song.findById(req.params.id, function(err, song){
-        console.log(song)
-        res.render('songs/show', {song});
+        res.render('songs/show', {
+            song,
+            user: req.user,
+        });
     }
     )};
 
@@ -47,7 +56,7 @@ function show(req, res) {
 
         function update(req, res) {
             Song.findByIdAndUpdate(req.params.id, req.body, function(err, song) {
-
+                console.log(song);
                 res.redirect('/songs');
             });
             console.log(req.params.id);

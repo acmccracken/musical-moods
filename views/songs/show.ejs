@@ -49,8 +49,8 @@
                         </select>
                         <button type="submit" id="updatebtn2">Update Rating</button>
                     </form>
-                        <form action="/songs<%= song._id %>/rating" method="POST">
-                            <select name="rating.songRating">
+                        <form action="/songs/<%=song._id%>/rating/" method="POST">
+                            <select name="songRating">
                             <option value=1>1</option>
                             <option value=2>2</option>
                             <option value=3>3</option>

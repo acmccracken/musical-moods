@@ -29,7 +29,8 @@ const songSchema = new Schema({
         max: 2020,
         required: true
     },
-    rating: [ratingSchema]
+    rating: [ratingSchema], 
+    userCreated: {type: Schema.Types.ObjectId, ref: "User"},
 
   });
  
