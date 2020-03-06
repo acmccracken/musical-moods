@@ -28,7 +28,7 @@ module.exports = {
 
 function create(req, res) {
     const song = new Song(req.body);
-    song.userCreated = req.user_id;
+    song.userCreated = req.user._id;
     song.save((err) => {
     if(err){
         console.log(err);
@@ -48,9 +48,17 @@ function show(req, res) {
     )};
 
     function deleteOne(req, res) {
+        Song.findById(req.params.id, function(err, song){
+
+            if (song.userCreated.equals(req.user._id)) {
+
         Song.findByIdAndDelete(req.params.id, function(err, song){
          console.log(song);
         res.redirect('/songs');
+        })
+        } else{
+            res.redirect("/songs");
+        }
         }
         )};
 

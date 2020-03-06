@@ -30,7 +30,7 @@ const songSchema = new Schema({
         required: true
     },
     rating: [ratingSchema], 
-    userCreated: {type: Schema.Types.ObjectId, ref: "User"},
+    userCreated: String,
 
   });
  

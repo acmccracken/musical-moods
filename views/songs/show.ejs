@@ -16,7 +16,7 @@
             <td><%= song.year %></td>
             <td>
             <form action="/songs/<%= song._id %>?_method=DELETE" method="POST">
-                <button type="submit" id="deletebtn">X</button>
+                <button <% if (user._id.equals(song.userCreated) == false) { %> hidden <%} %> type="submit" id="deletebtn">X</button>
             </form>
         </td>
             <td>
