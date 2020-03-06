@@ -21,7 +21,6 @@ module.exports = {
 }
 
 function create(req, res) {
-    console.log('create function?')
     const song = new Song(req.body);
     song.save((err) => {
     if(err){

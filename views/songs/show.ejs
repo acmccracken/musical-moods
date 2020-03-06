@@ -38,8 +38,8 @@
         </tr>
         <tr></tr>
             <td>
-                <form action="/songs/<%= song._id %>?_method=PUT" method="POST">
-                    <label>Rate Song:
+                <form action="/songs/<%= song._id %>/?_method=PUT" method="POST">
+                    <label>Rate Song:</label>
                         <select name="rating.songRating">
                             <option value=1>1</option>
                             <option value=2>2</option>
@@ -47,7 +47,18 @@
                             <option value=4>4</option>
                             <option value=5>5</option>
                         </select>
-                        <button type="submit" id="updatebtn2">Rate Song</button>
+                        <button type="submit" id="updatebtn2">Update Rating</button>
+                    </form>
+                        <form action="/songs<%= song._id %>/rating" method="POST">
+                            <select name="rating.songRating">
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                        </select>
+                            <button type="submit">Add Rating</button>
+                        </form>
             </td>
         
                 <% if (song.rating.length != 0) {%>
