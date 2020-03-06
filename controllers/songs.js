@@ -48,19 +48,12 @@ function show(req, res) {
     )};
 
     function deleteOne(req, res) {
-        Song.findById(req.params.id, function(err, song){
-
-            if (song.userCreated.equals(req.user._id)) {
-
+        
         Song.findByIdAndDelete(req.params.id, function(err, song){
          console.log(song);
         res.redirect('/songs');
-        })
-        } else{
-            res.redirect("/songs");
-        }
-        }
-        )};
+        });
+     }
 
         function update(req, res) {
             Song.findByIdAndUpdate(req.params.id, req.body, function(err, song) {
