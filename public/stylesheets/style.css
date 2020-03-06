@@ -1,8 +1,15 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 19px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: darkgreen;
+  color: goldenrod;
 }
 
 a {
   color: #00B7FF;
+}
+nav {
+  width: 28px;
+  object-fit: contain;
+  margin-right: auto;
 }
