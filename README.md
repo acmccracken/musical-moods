@@ -2,7 +2,7 @@
 Musical Moods is a music sharing app that provides users with the opportunity to share their favorite songs and list them by mood.
 
 [Musical Moods](https://musical-moods.herokuapp.com/)
-
+![Imgur](https://i.imgur.com/tT4ThkY.png)
 Technologies Used
 * Node
 * HTML
